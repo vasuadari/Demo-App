@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  roll_no: 1
+  year: 1
+
+two:
+  name: MyString
+  roll_no: 1
+  year: 1
