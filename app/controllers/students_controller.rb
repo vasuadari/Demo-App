@@ -40,9 +40,6 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-     params = {
-      student: { name: '', roll_no: ''}
-     }
     @student = Student.new(params[:student])
 
     respond_to do |format|
