@@ -24,6 +24,20 @@ class StudentsControllerTest < ActionController::TestCase
     assert_redirected_to student_path(assigns(:student))
   end
 
+  test "should create student via json" do
+    assert_difference('Student.count') do
+      post :create, {
+        student: { name: "Ada Lovelace", roll_no: 42, year: 1 },
+        format: :json
+      }
+    end
+
+    assert_response :created
+    body = JSON.parse(@response.body)
+    assert_equal "Ada Lovelace", body["name"]
+    assert_equal 42, body["roll_no"]
+  end
+
   test "should show student" do
     get :show, id: @student
     assert_response :success
